@@ -1,7 +1,4 @@
 const formEl = document.querySelector(".login-form");
-const btnEl = formEl.querySelector("button");
-
-let formObj= {};
 
 const onSubmitEl = formEl.addEventListener("submit", onClickSubmit);
 
@@ -11,10 +8,11 @@ function onClickSubmit(evt) {
     const password = formEl.elements.password.value;
 
     if ((email && password) === "") {
-        alert("Вы не заполнили формы!")
+        return alert("Вы не заполнили формы!")
     }
 
-    formObj = {email, password};
+    const formObj = {email, password};
     console.log(formObj);
-    formEl.reset();
+
+    evt.target.reset();
 }

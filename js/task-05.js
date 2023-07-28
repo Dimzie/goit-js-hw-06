@@ -5,7 +5,7 @@ const defaultName = "Anonymous";
 const changeInputEl = inputEl.addEventListener("input", onInputChange);
 
 function onInputChange(event) {
-    if (event.currentTarget.value === '') {
+    if (event.currentTarget.value.trim() === '') {
         return spanEl.textContent = defaultName;
     } else {
         return spanEl.textContent = event.currentTarget.value;
