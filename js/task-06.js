@@ -5,18 +5,14 @@ const inputCheckEl = inputEl.addEventListener("blur", onBlurChange);
 
 function onBlurChange(event) {
     if (event.currentTarget.value.length === lengthInputEl) {
-        isValid();
+        updateStatus("invalid", "valid");
     } else {
-        isInvalid();
+        updateStatus("valid","invalid");
     }
 }
 
-function isValid() {
-    inputEl.classList.add("valid");
-    inputEl.classList.remove("invalid")   
-}
 
-function isInvalid() {
-    inputEl.classList.add("invalid");
-    inputEl.classList.remove("valid"); 
+function updateStatus(a, b) {
+    inputEl.classList.add(a);
+    inputEl.classList.remove(b);
 }
